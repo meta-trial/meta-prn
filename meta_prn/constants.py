@@ -1,0 +1,5 @@
+END_OF_STUDY_ACTION = "submit_end_of_study"
+LOSS_TO_FOLLOWUP_ACTION = "submit_loss_to_followup"
+WITHDRAWAL = "withdrawal"
+TRANSFERRED = "transferred"
+LATE_EXCLUSION = "late_exclusion"

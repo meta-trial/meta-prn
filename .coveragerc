@@ -1,0 +1,4 @@
+[run]
+include = meta_prn/*
+omit = meta_prn/tests/*
+branch = 1
