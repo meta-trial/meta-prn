@@ -1,0 +1,8 @@
+faker
+model-mommy
+meta-sites
+meta-rando
+edc-reportable
+edc-subject-dashboard
+meta-dashboard
+meta-reports
