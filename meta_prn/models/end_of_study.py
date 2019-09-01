@@ -12,10 +12,7 @@ from ..constants import END_OF_STUDY_ACTION
 
 
 class EndOfStudy(
-    OffScheduleModelMixin,
-    ActionModelMixin,
-    TrackingModelMixin,
-    BaseUuidModel,
+    OffScheduleModelMixin, ActionModelMixin, TrackingModelMixin, BaseUuidModel
 ):
 
     action_name = END_OF_STUDY_ACTION
@@ -31,14 +28,10 @@ class EndOfStudy(
         null=True,
     )
 
-    offschedule_reason = models.ManyToManyField(
-        OffstudyReasons)
+    offschedule_reason = models.ManyToManyField(OffstudyReasons)
 
     other_offschedule_reason = models.CharField(
-        verbose_name="If OTHER, please specify",
-        max_length=150,
-        blank=True,
-        null=True,
+        verbose_name="If OTHER, please specify", max_length=150, blank=True, null=True
     )
 
     death_date = models.DateField(
@@ -50,9 +43,11 @@ class EndOfStudy(
 
     transferred_consent = models.CharField(
         verbose_name=(
-            "If transferred, has the patient provided consent to be followed-up?"),
+            "If transferred, has the patient provided consent to be followed-up?"
+        ),
         choices=YES_NO_NA,
-        default=NOT_APPLICABLE
+        max_length=15,
+        default=NOT_APPLICABLE,
     )
 
     class Meta(OffScheduleModelMixin.Meta):
