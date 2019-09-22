@@ -5,7 +5,10 @@ from edc_action_item.managers import (
 )
 from edc_action_item.models import ActionModelMixin
 from edc_constants.choices import YES_NO, NOT_APPLICABLE
-from edc_identifier.model_mixins import TrackingModelMixin
+from edc_identifier.model_mixins import (
+    TrackingModelMixin,
+    NonUniqueSubjectIdentifierFieldMixin,
+)
 from edc_model import REPORT_STATUS
 from edc_model.models import BaseUuidModel
 from edc_model.validators import datetime_not_future
@@ -17,7 +20,11 @@ from ..choices import PROTOCOL_VIOLATION, ACTION_REQUIRED, DEVIATION_VIOLATION
 
 
 class ProtocolDeviationViolation(
-    SiteModelMixin, ActionModelMixin, TrackingModelMixin, BaseUuidModel
+    NonUniqueSubjectIdentifierFieldMixin,
+    SiteModelMixin,
+    ActionModelMixin,
+    TrackingModelMixin,
+    BaseUuidModel,
 ):
 
     action_name = PROTOCOL_DEVIATION_VIOLATION_ACTION
