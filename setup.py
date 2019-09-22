@@ -37,6 +37,7 @@ setup(
         'django-collect-offline-files',
         'edc-action-item',
         'edc-notification',
+        'meta_lists',
     ],
     classifiers=[
         'Environment :: Web Environment',

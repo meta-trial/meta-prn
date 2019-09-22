@@ -19,16 +19,19 @@ class EndOfStudy(
 
     tracking_identifier_prefix = "ST"
 
-    subject_identifier = models.CharField(max_length=50, unique=True)
-
     offschedule_datetime = models.DateTimeField(
-        verbose_name="Date patient terminated study",
+        verbose_name="Date patient was terminated from the study",
         validators=[datetime_not_future],
-        blank=True,
+        blank=False,
         null=True,
     )
 
-    offschedule_reason = models.ManyToManyField(OffstudyReasons)
+    offschedule_reason = models.ForeignKey(
+        OffstudyReasons,
+        verbose_name="Reason patient was terminated from the study",
+        on_delete=models.PROTECT,
+        null=True,
+    )
 
     other_offschedule_reason = models.CharField(
         verbose_name="If OTHER, please specify", max_length=150, blank=True, null=True

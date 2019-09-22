@@ -22,7 +22,14 @@ class EndOfStudyAdmin(ModelAdminSubjectDashboardMixin, SimpleHistoryAdmin):
     fieldsets = (
         [
             "Part 1:",
-            {"fields": ("subject_identifier", "offschedule_datetime", "death_date")},
+            {
+                "fields": (
+                    "subject_identifier",
+                    "offschedule_datetime",
+                    "offschedule_reason",
+                    "death_date",
+                )
+            },
         ],
         action_fieldset_tuple,
         audit_fieldset_tuple,
@@ -37,6 +44,8 @@ class EndOfStudyAdmin(ModelAdminSubjectDashboardMixin, SimpleHistoryAdmin):
     )
 
     list_filter = ("offschedule_datetime",)
+
+    radio_fields = {"offschedule_reason": admin.VERTICAL}
 
     search_fields = ("subject_identifier", "action_identifier", "tracking_identifier")
 

@@ -2,7 +2,10 @@ from django.db import models
 from edc_action_item.models.action_model_mixin import ActionModelMixin
 from edc_constants.choices import YES_NO
 from edc_constants.constants import OTHER
-from edc_identifier.model_mixins.tracking_model_mixin import TrackingModelMixin
+from edc_identifier.model_mixins import (
+    TrackingModelMixin,
+    NonUniqueSubjectIdentifierFieldMixin,
+)
 from edc_model.models.base_uuid_model import BaseUuidModel
 from edc_sites.models import SiteModelMixin
 from edc_utils.date import get_utcnow
@@ -19,7 +22,11 @@ LOSS_CHOICES = (
 
 
 class LossToFollowup(
-    SiteModelMixin, ActionModelMixin, TrackingModelMixin, BaseUuidModel
+    NonUniqueSubjectIdentifierFieldMixin,
+    SiteModelMixin,
+    ActionModelMixin,
+    TrackingModelMixin,
+    BaseUuidModel,
 ):
 
     action_name = LOSS_TO_FOLLOWUP_ACTION

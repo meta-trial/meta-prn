@@ -1,8 +1,10 @@
 faker
 model-mommy
+meta-ae
 meta-sites
 meta-rando
 edc-reportable
 edc-subject-dashboard
 meta-dashboard
 meta-reports
+meta-lists

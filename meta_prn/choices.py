@@ -15,30 +15,6 @@ LOSS_CHOICES = (
     (OTHER, "Other"),
 )
 
-CAUSE_OF_DEATH = (
-    (TUBERCULOSIS, "TB"),
-    (MALIGNANCY, "Malignancy"),
-    ("art_toxicity", "ART toxicity"),
-    ("diarrhea_wasting", "Diarrhea/wasting"),
-    (UNKNOWN, "Unknown"),
-    (OTHER, "Other"),
-)
-
-DEATH_LOCATIONS = (
-    ("home", "At home"),
-    ("hospital_clinic", "Hospital/clinic"),
-    ("home", "Elsewhere"),
-)
-
-
-INFORMANT_RELATIONSHIP = (
-    ("husband_wife", "Husband/wife"),
-    ("Parent", "Parent"),
-    ("child", "Child"),
-    (UNKNOWN, "Unknown"),
-    (OTHER, "Other"),
-)
-
 PROTOCOL_VIOLATION = (
     ("failure_to_obtain_informed_consent", "Failure to obtain informed " "consent"),
     ("enrollment_of_ineligible_patient", "Enrollment of ineligible patient"),

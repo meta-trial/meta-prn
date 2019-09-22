@@ -1,4 +1,9 @@
-from .death_report_admin import DeathReportAdmin
+from .autocomplete_admin import (
+    UnblindingRequestorUserAdmin,
+    UnblindingReviewerUserAdmin,
+)
 from .end_of_study_admin import EndOfStudyAdmin
 from .onschedule_admin import OnScheduleAdmin
 from .protocol_deviation_violation_admin import ProtocolDeviationViolationAdmin
+from .unblinding_request_admin import UnblindingRequestAdmin
+from .unblinding_review_admin import UnblindingReviewAdmin
