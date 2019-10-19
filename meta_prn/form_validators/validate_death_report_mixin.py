@@ -11,7 +11,7 @@ from edc_utils import convert_php_dateformat
 
 class ValidateDeathReportMixin:
 
-    death_report_model = "ambition_prn.deathreport"
+    death_report_model = "meta_ae.deathreport"
 
     @property
     def death_report_model_cls(self):
