@@ -1,7 +1,10 @@
+from edc_adverse_event.constants import DEATH_REPORT_ACTION
 from edc_constants.constants import HIGH_PRIORITY, TBD, YES
 from edc_action_item.action_with_notification import ActionWithNotification
 from edc_action_item.site_action_items import site_action_items
-from edc_adverse_event.constants import DEATH_REPORT_ACTION
+from edc_prn.action_items import (
+    ProtocolDeviationViolationAction as BaseProtocolDeviationViolationAction,
+)
 
 from .constants import (
     END_OF_STUDY_ACTION,
@@ -80,6 +83,12 @@ class UnblindingReviewAction(ActionWithNotification):
         return next_actions
 
 
+class ProtocolDeviationViolationAction(BaseProtocolDeviationViolationAction):
+    reference_model = "meta_prn.protocoldeviationviolation"
+    admin_site_name = "meta_prn_admin"
+
+
+site_action_items.register(ProtocolDeviationViolationAction)
 site_action_items.register(EndOfStudyAction)
 site_action_items.register(LossToFollowupAction)
 site_action_items.register(UnblindingRequestAction)
