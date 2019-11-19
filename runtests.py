@@ -59,6 +59,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_sites.apps.AppConfig",
         "edc_visit_schedule.apps.AppConfig",
         "edc_visit_tracking.apps.AppConfig",
+        "meta_screening.apps.AppConfig",
         "meta_subject.apps.AppConfig",
         "meta_lists.apps.AppConfig",
         "ae_app.apps.AppConfig",
