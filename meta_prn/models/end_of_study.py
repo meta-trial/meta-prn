@@ -33,8 +33,8 @@ class EndOfStudy(
         null=True,
     )
 
-    other_offschedule_reason = models.CharField(
-        verbose_name="If OTHER, please specify", max_length=150, blank=True, null=True
+    other_offschedule_reason = models.TextField(
+        verbose_name="If OTHER, please specify", max_length=500, blank=True, null=True
     )
 
     death_date = models.DateField(
